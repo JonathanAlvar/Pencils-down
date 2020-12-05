@@ -1,0 +1,9 @@
+#Quiz {
+  text-align: center;
+  padding: 10rem;
+}
+
+#score {
+text-align: right;
+margin: 100px
+}
