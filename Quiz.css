@@ -1,9 +1,49 @@
-#Quiz {
+.image {
+  position: relative;
+  padding: 1rem;
   text-align: center;
-  padding: 10rem;
+}
+
+#title {
+  text-align: center;
+  padding: 5px;
+}
+
+.start {
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+#question {
+  text-align: center;
+  padding: 5px;
+  font-size: large;
+}
+
+#timer {
+  text-align: center;
+  padding: 5px;
+  font-size: large;
+}
+
+#counter {
+  font-size: 40px;
+}
+
+.rules {
+  text-align: center;
+  padding: 5px;
+  font-size: x-large;
+  font-style: italic;
+}
+
+#wrong {
+  text-decoration: underline;
 }
 
 #score {
-text-align: right;
-margin: 100px
+  text-align: right;
+  margin: 100px;
 }
