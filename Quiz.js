@@ -1,78 +1,83 @@
 //question array and variable
-var startButton = document.getElementById("#start");
-var questionsEl = document.getElementById("#quiz");
-var secondsDisplay = document.getElementById("#question");
-var timeEl = document.getElementById("#counter");
-var option1 = document.getElementById("#option1");
-var option2 = document.getElementById("#option2");
-var option3 = document.getElementById("#option3");
 
+var startBtn = document.getElementById('start-button');
+var nextBtn = document.getElementById('next-button');
+var score = 0;
+var quizContainerEl = document.getElementById('quiz');
+var _question = document.getElementById('questions');
+var btn1 = document.getElementById('button1');
+var btn2 = document.getElementById('button2');
+var btn3 = document.getElementById('button3');
+var timer = document.getElementById('timer');
+var submitBtn = document.getElementById('submit-button');
+var initials = document.getElementById('initials');
+//var currentQuestion = 0;
+
+
+
+//Push questions to HTML
+startBtn.addEventListener("click", startQuiz)
+nextBtn.addEventListener("click", nextQuestion)
+
+
+
+//start quiz
+function startQuiz() {
+    console.log("Start")
+    currentQuestion = 0
+    nextQuestion()
+}
+
+function nextQuestion() {
+    console.log("Next") 
+    questions.textContent = questions.questions;
+    btn1.textContent = questions.button1;
+    btn2.textContent = questions.button2;
+    btn3.textContent = questions.button3;
+    
+}
+console.log(nextQuestion)
+
+function viewQuestion(questions){
+    console.log("question")
+}
+
+function selctionOption() {
+    console.log("options")
+}  
+
+
+
+//Questions
 var questions = [
     {
-        question: "Wo created JavaScript?",
+        question: "Who created JavaScript?",
         option1: "A. Microsoft",
         option2: "B. Oracle",
         option3: "C. Netscape",
-        correctAnswer: "C. Netscape"
+        correctAnswer: "3"
     },
     {
         question: "Is JavaScript a front-end, back-end, or full-stack programming language?",
         option1: "A. Front-end",
         option2: "B. Back-end",
         option3: "C. Full-stack",
-        correctAnswer: "C. Full-stack"
+        correctAnswer: "3"
     },
     {
         question: "What is the function for creating a prompt box?",
         option1: "A. Alert()",
         option2: "B. prompt()",
         option3: "C. confirm()",
-        correctAnswer: "B. prompt()"
+        correctAnswer: "2"
     },
     {
         question: "Is JavaScript the same as Java?",
         option1: "Yes",
         option2: "No",
         option3: "I don't know",
-        correctAnswer: "No"
+        correctAnswer: "2"
     }]
-
-var startSeconds = 60;
-var secondsElapsed = 0;
-var questions = -1;
-var userScore = 0;
-
-
-
-//Push questions to HTML
-var firstQuestion = question.length - 1;
-var askQuestion = 0;
-
-function renderQuestion() {
-    var ques = questions[askQuestions];
-    question.innerHTML = "<p>"+ q.question +"</p>";
-    option1.innerHTML = q.option1;
-    option2.innerHTML = q.option2;
-    option3.innerHTML = q.option3;
-}
-
-console.log(renderQuestion)
-
-//starting timer and ending timer
-var countDown
-function startQuiz() {
-    countDown = setInterval(startingTimer, 1000);
-    function startingTimer() {
-        document.getElementById("time").innerHTML = i--;
-        if (i == 0) {
-            clearInterval(countDown)
-        }
-    }
-
-}
-
-startButton.addEventListener("click", startQuiz)
-
-//Generate user score
+console.log(questions)
 
 //view high scores

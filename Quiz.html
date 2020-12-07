@@ -14,57 +14,73 @@
     <title>Quiz Time!</title>
   </head>
   <body>
-    <!--Image & Title-->
-    <section class="image">
-      <a><img src="Quiztime.png" alt="" /></a>
-    </section>
-    <br />
-    <section>
-      <h1 id="title">Quiz Time!</h1>
-
-      <!--Start Button-->
-      <sections>
-        <div class="start" id="start">
-          <button type="button" class="btn btn-primary">Start Quiz</button>
-        </div>
-      </sections>
-
-      <!--Questions and timer-->
-      <div class="quiz">
-        <div id="question"></div>
-          <div id="timer">
-            <div id="seconds_left">Time Remaining</div>
-            <div id="counter">60</div>
+    <main>
+      <div id="container" class="container">
+        <!--Image & Title-->
+        <section class="image">
+          <a><img src="Quiztime.png" alt="" /></a>
+        </section>
+        <br />
+        <section>
+          <h1 id="title">Quiz Time!</h1>
+          <!--Rules-->
+          <section>
+            <p class="rules">
+              Try to get as many answers correct in 60 seconds.
+              <span id="wrong"
+                >Wrong answers wil result in a deduction of 10 seconds from your
+                time.</span
+              >
+            </p>
+          </section>
+          <button id="start-button" class="start-button" onclick="startQuiz();">
+            Start Quiz
+          </button>
+          <br>
+          <br>
+          <!--Questions and timer-->
+          <div class="quiz" class="container">
+            <div id="timer">
+              Time Remaining
+              <div id="seconds">60</div>
+            </div>
+            <br>
+            <div id="question">Questions</div>
+            <div id="options-buttons" class="options-buttons">
+              <button class="options" id="button1">Option 1</button>
+              <button class="options" id="button2">Option 2</button>
+              <button class="options" id="button3">Option 2</button>
+            </div>
           </div>
-        <hr />
-          <div id="Options">
-              <div id="option1" onclick="checkAnswer('option1')"></div>
-              <div id="option2" onclick="checkAnswer('option2')"></div>
-              <div id="option3" onclick="checkAnswer('option3')"></div>
-          </div>
-        
-      </div>
 
-      <!--Rules-->
-      <section>
-        <p class="rules">
-          Try to get as many answers correct in 60 seconds.
-          <span id="wrong"
-            >Wrong answers wil result in a deduction of 10 seconds from your
-            time.</span
+          <hr />
+          <button
+            id="next-button"
+            class="next-button"
+            onclick="nextQuestion();"
           >
-        </p>
-      </section>
+            NEXT
+          </button>
+          <br />
+          <br />
+        </section>
 
-      <br />
-      <br />
-    </section>
-    <br />
-    <br />
+        <div id="finish"> 
+              <p>Enter your initials:</p>
+                  <input type="text" id="initials"/>
+                  <br>
+                  <br>
+                  <button id="submit-button" class="submit-button" onclick="addInitials();">Submit</button>
+          </div> 
+      </div> 
+        <br />
+        <br />
 
-    <div class="text-align-right">
-      <a onclick="getScore()" href=""><h4 id="score">View Highscore</h4></a>
-    </div>
+        <div id="scores">
+          <a onclick="getScore()" href=""><h4 id="score">View Highscore</h4></a>
+        </div>
+      </div>
+    </main>
     <script src="quiz.js" type="text/javascript"></script>
   </body>
 </html>
