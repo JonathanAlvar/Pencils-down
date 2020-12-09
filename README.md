@@ -11,7 +11,8 @@ I ran into extreme difficulty when attempting to have the questions and options 
 
 Screen shot:
 
-![alt text](pencilsdownimage.jpeg)
+![alt text](https://github.com/JonathanAlvar/Pencils-down/blob/main/pencilsdownimage.JPG)
 
 URL:
+https://jonathanalvar.github.io/Pencils-down/
 
