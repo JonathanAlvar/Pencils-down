@@ -1,54 +1,80 @@
-//question array and variable
-
+// variables
+//Buttons in HTM
+var container = document.getElementById('container');
 var startBtn = document.getElementById('start-button');
-var nextBtn = document.getElementById('next-button');
-var score = 0;
-var quizContainerEl = document.getElementById('quiz');
-var _question = document.getElementById('questions');
-var btn1 = document.getElementById('button1');
-var btn2 = document.getElementById('button2');
-var btn3 = document.getElementById('button3');
-var timer = document.getElementById('timer');
-var submitBtn = document.getElementById('submit-button');
+var button1 = document.getElementById('btn1');
+var button2 = document.getElementById('btn2');
+var button3 = document.getElementById('btn3');
 var initials = document.getElementById('initials');
-//var currentQuestion = 0;
+var submitBtn = document.getElementById('submit-button');
+//Timer and Questions
+
+var question = document.getElementById('question');
+var questionIndex = 0;
+var score = 0;
+var timer = document.getElementById('seconds')
+var i = 60;
+var timeStart;
+var timeEnds;
 
 
+//start quiz and timer Functions
 
-//Push questions to HTML
-startBtn.addEventListener("click", startQuiz)
-nextBtn.addEventListener("click", nextQuestion)
+container.addEventListener("click", startQuiz);
 
-
-
-//start quiz
 function startQuiz() {
     console.log("Start")
-    currentQuestion = 0
-    nextQuestion()
+    container.style.display = "none";
+    startTimer();
+    firstQuestion();
+    quiz.style.display = "block";
 }
 
-function nextQuestion() {
-    console.log("Next") 
-    questions.textContent = questions.questions;
+function startTimer() {
+    timeStart = setInterval(function () {
+        //console.log(timer)
+        i--;
+        timer.textContent = "Time Remaining: " + i;
+
+        if (i === 0) {
+            clearInterval(timeStart)
+        }
+        timeEnds = 0 - i
+    }, 1000);
+}
+
+//Question functions
+
+// quiz.addEventListener("click", firstQuestion);
+
+function firstQuestion(questionIndex) {
+    console.log("first")
+    question = questions[questionIndex]
     btn1.textContent = questions.button1;
     btn2.textContent = questions.button2;
     btn3.textContent = questions.button3;
-    
-}
-console.log(nextQuestion)
-
-function viewQuestion(questions){
-    console.log("question")
-}
-
-function selctionOption() {
-    console.log("options")
-}  
+};
 
 
+function nextQuestion(event) {
+    if (event.value === questions[questionIndex].correct) {
+        userScore++;
+        message.innerHTML = "Correct"
+    }
+    else {
+        message.innerHTML = "Incorrect"
+        i -= 5;
+        timer.innerHTML = "Time : " + i;
+    }
+    if (questionIndex < questions.length - 1) {
+        questionIndex++;
+    }
+    else {
+        clearInterval(timeStart);
+    }
+};
 
-//Questions
+//Questions array
 var questions = [
     {
         question: "Who created JavaScript?",
@@ -80,4 +106,5 @@ var questions = [
     }]
 console.log(questions)
 
-//view high scores
+
+//Initials functions
